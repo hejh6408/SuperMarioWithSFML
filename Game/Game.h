@@ -17,7 +17,7 @@ public:
 	Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
 	virtual ~Game() {};
 
-	GameState Run();
+	void Run();
 private:
 	// √ ±‚»≠
 	void initialize();

@@ -9,9 +9,14 @@ Game::Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle
 	initialize();
 }
 
-GameState Game::Run()
+void Game::Run()
 {
-	return GameState::FAIL;
+	GameState state = GameState::FAIL;
+
+	while(state == GameState::SUCCESS)
+	{
+		// todo
+	}
 }
 
 void Game::initialize()
