@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Camera">
+      <UniqueIdentifier>{d640d47f-7e8a-4a65-bc16-cb4bf19a278e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{3f3ebea5-132d-4898-9ef3-a149d8c56d33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{66e3b216-1b66-406a-914d-e119217982bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Mario">
+      <UniqueIdentifier>{80d32475-57e8-4d7b-a8d2-77aa818e0074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Camera">
+      <UniqueIdentifier>{c3121cdd-65c5-434d-a2c5-c115443bfed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game">
+      <UniqueIdentifier>{fa1155e6-7b2d-4fdc-989c-049755285e51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Manager">
+      <UniqueIdentifier>{62b44a87-bb75-4c9c-9108-19c385a7390b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Mario">
+      <UniqueIdentifier>{f9ea0249-bdaa-4206-8334-c192dda23b81}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
