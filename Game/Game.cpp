@@ -16,6 +16,8 @@ GameState Game::Run()
 
 void Game::initialize()
 {
+	m_gameData = std::make_shared<GameData>();
+	
 	// todo
 }
 
