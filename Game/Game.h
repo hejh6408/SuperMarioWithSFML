@@ -1,7 +1,13 @@
 #pragma once
 
-#include <memory>
 #include "GameDefinition.h"
+
+#include <memory>
+
+// "Window, Graphics" to definite RenderWindow
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+
 
 namespace GAME
 {
@@ -20,13 +26,16 @@ public:
 	void Run();
 private:
 	// 초기화
-	void initialize(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
-
+	void initializeWindow(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
+	void initializeGameData();
 	// 분당 프레임수
 	const float frame = 1.f / 60.f;
 
 	// 게임 데이터 관리
 	GameDataRef gameDataRef;
+	
+	// Window 
+	sf::RenderWindow window;
 };
 
 }
