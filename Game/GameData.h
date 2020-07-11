@@ -22,15 +22,12 @@ class GameData
 {
 public:
 	GameData();
-	GameData(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
 	virtual ~GameData() {};
 
-	void Exec();
 private:
 
-	void initialize(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
+	void initialize();
 
-	sf::RenderWindow window;
 	sf::Clock clock;
 
 	StateMachineRef stateMachineRef;
