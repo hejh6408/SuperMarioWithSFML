@@ -5,26 +5,32 @@ namespace GAME
 {
 
 Game::Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle)
+	:gameDataRef(nullptr)
 {
-	initialize(_screenWidth, _screenHeight, _gameTitle);
+	initializeWindow(_screenWidth, _screenHeight, _gameTitle);
+	initializeGameData();
 }
 
 void Game::Run()
 {
-	GameState state = GameState::FAIL;
-
-	while(state == GameState::SUCCESS)
+	while(window.isOpen() == true)
 	{
-		// todo
+
 	}
-	gameDataRef->Exec();
 }
 
-void Game::initialize(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle)
+void Game::initializeWindow(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle)
 {
-	gameDataRef = std::make_shared<GameData>(_screenWidth, _screenHeight, _gameTitle);
+	sf::VideoMode video_mode;
+	sf::String game_title((std::string)_gameTitle);
+	sf::ContextSettings video_setting;
 
-	// todo
+	window.create(video_mode, game_title, sf::Style::Close | sf::Style::Titlebar, video_setting);
+}
+
+void Game::initializeGameData()
+{
+	gameDataRef = std::make_shared<GameData>();
 }
 
 }
