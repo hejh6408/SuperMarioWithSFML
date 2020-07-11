@@ -6,7 +6,7 @@ namespace GAME
 
 Game::Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle)
 {
-	initialize();
+	initialize(_screenWidth, _screenHeight, _gameTitle);
 }
 
 void Game::Run()
@@ -17,12 +17,13 @@ void Game::Run()
 	{
 		// todo
 	}
+	gameDataRef->Exec();
 }
 
-void Game::initialize()
+void Game::initialize(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle)
 {
-	m_gameData = std::make_shared<GameData>();
-	
+	gameDataRef = std::make_shared<GameData>(_screenWidth, _screenHeight, _gameTitle);
+
 	// todo
 }
 
