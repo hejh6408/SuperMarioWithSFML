@@ -28,9 +28,9 @@ void Game::initializeWindow(game_int _screenWidth, game_int _screenHeight, game_
 	window.create(video_mode, game_title, sf::Style::Close | sf::Style::Titlebar, video_setting);
 }
 
-void Game::initializeGameData()
+void Game::initializeGameData(/*input for GameData*/)
 {
-	gameDataRef = std::make_shared<GameData>();
+	gameDataRef = std::make_shared<GameData>(/*input for GameData*/);
 }
 
 }
