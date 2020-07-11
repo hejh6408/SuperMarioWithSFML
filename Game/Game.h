@@ -1,7 +1,13 @@
 #pragma once
 
-#include <memory>
 #include "GameDefinition.h"
+
+#include <memory>
+
+// "Window, Graphics" to definite RenderWindow
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+
 
 namespace GAME
 {

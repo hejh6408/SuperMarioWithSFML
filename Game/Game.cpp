@@ -21,7 +21,7 @@ void Game::Run()
 
 void Game::initializeWindow(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle)
 {
-	sf::VideoMode video_mode;
+	sf::VideoMode video_mode(_screenWidth, _screenHeight);
 	sf::String game_title((std::string)_gameTitle);
 	sf::ContextSettings video_setting;
 
