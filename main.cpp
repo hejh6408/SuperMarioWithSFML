@@ -9,5 +9,6 @@ int main()
 
 	marioGame.Run();
 	
-	return EXIT_SUCCESS;
+	//return EXIT_SUCCESS;
+	return 0;
 }
