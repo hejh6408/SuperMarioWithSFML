@@ -10,5 +10,6 @@ int main()
 	marioGame.Run();
 	
 	//return EXIT_SUCCESS;
+	// 주석 테스트
 	return 0;
 }
