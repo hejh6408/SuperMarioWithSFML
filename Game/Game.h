@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "GameDefinition.h"
 
@@ -19,19 +19,19 @@ typedef std::shared_ptr<GameData> GameDataRef;
 class Game
 {
 public:
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
 	virtual ~Game() {};
 
 	void Run();
 private:
-	// ÃÊ±âÈ­
+	// ì´ˆê¸°í™”
 	void initializeWindow(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
 	void initializeGameData();
-	// ºĞ´ç ÇÁ·¹ÀÓ¼ö
+	// ë¶„ë‹¹ í”„ë ˆì„ìˆ˜
 	const float frame = 1.f / 60.f;
 
-	// °ÔÀÓ µ¥ÀÌÅÍ °ü¸®
+	// ê²Œì„ ë°ì´í„° ê´€ë¦¬
 	GameDataRef gameDataRef;
 	
 	// Window 
