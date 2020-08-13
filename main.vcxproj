@@ -139,6 +139,7 @@
     <ClCompile Include="Game\GameData.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="State\StateBase.cpp" />
+    <ClCompile Include="State\StateSplash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game\Game.h" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Game\GameDefinition.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="State\StateBase.h" />
+    <ClInclude Include="State\StateSplash.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
