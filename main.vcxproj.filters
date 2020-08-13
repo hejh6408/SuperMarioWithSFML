@@ -37,6 +37,12 @@
     <Filter Include="헤더 파일\Mario">
       <UniqueIdentifier>{f9ea0249-bdaa-4206-8334-c192dda23b81}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\State">
+      <UniqueIdentifier>{5cae1cb2-736d-4b67-a4e6-411d6375bef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\State">
+      <UniqueIdentifier>{9c7b18f1-3b58-445f-bc56-0f526c5b266f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -47,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="Game\GameData.cpp">
       <Filter>소스 파일\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="State\StateBase.cpp">
+      <Filter>소스 파일\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Game\Game.h">
       <Filter>헤더 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="State\StateBase.h">
+      <Filter>헤더 파일\State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
