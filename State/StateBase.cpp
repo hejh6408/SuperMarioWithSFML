@@ -1,6 +1,10 @@
-#include "../State/StateBase.h"
+#include "StateBase.h"
 
-namespace Mario
+namespace Game
 {
-	
+StateBase::StateBase(GameDataRef _gameDataRef)
+	:gameDataWeakRef(_gameDataRef)
+{
+
+}
 }

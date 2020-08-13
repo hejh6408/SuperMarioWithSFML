@@ -1,12 +1,17 @@
 #pragma once
 
+#include <memory>
+
 namespace Game
 {
+class GameData;
+typedef std::shared_ptr<GameData> GameDataRef;
+typedef std::weak_ptr<GameData> GameDataWeakRef;
 
 class StateBase
 {
 public:
-	StateBase() {};
+	StateBase(GameDataRef _gameDataRef);
 	~StateBase() {};
 
 	virtual void Init() = 0;
@@ -20,7 +25,8 @@ public:
 	virtual void Pause() = 0;
 	virtual void Resume() = 0;
 private:
-
+	
+	GameDataWeakRef gameDataWeakRef;
 };
 
 }
