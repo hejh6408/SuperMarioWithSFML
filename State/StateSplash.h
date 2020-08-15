@@ -11,16 +11,16 @@ public:
 	StateSplash(GameDataRef _gameDataRef);
 	~StateSplash() {};
 
-	virtual void Init() = 0;
+	virtual void Init() override;
 
-	virtual void HandleInput() = 0;
+	virtual void HandleInput() override;
 
-	virtual void Update() = 0;
+	virtual void Update() override;
 
-	virtual void Draw() = 0;
+	virtual void Draw() override;
 
-	virtual void Pause() = 0;
-	virtual void Resume() = 0;
+	virtual void Pause() override;
+	virtual void Resume() override;
 private:
 	
 	GameDataWeakRef gameDataWeakRef;
