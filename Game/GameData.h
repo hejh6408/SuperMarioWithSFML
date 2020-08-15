@@ -23,6 +23,8 @@ public:
 	GameData();
 	virtual ~GameData() {};
 
+	long double GetElapsedTimeAsMilliSecond() const;
+	long double GetElapsedTimeAsSecond() const;
 private:
 
 	void initialize();
