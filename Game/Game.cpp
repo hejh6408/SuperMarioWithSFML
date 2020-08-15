@@ -1,11 +1,13 @@
 ﻿#include "Game.h"
 #include "GameData.h"
 
+#include "../Manager/StateManager.h"
+
 namespace GAME
 {
 
 Game::Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle)
-	:gameDataRef(nullptr)
+	:thisGameDataRef(nullptr)
 {
 	initializeWindow(_screenWidth, _screenHeight, _gameTitle);
 	initializeGameData();
@@ -13,9 +15,21 @@ Game::Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle
 
 void Game::Run()
 {
-	while(window.isOpen() == true)
-	{
+	static const long double maxFrameTime = 0.25;
+	static const long double dt = 1.0L / 60.0L;
 
+	long double currentTime, iterpolation, frameTime, accumulator;
+
+	currentTime = thisGameDataRef->GetElapsedTimeAsSecond();
+	accumulator = 0.0L;
+
+	while(thisWindow.isOpen() == true)
+	{
+		thisStateManagerRef->Update();
+
+		frameTime = std::min(thisGameDataRef->GetElapsedTimeAsSecond() - currentTime, maxFrameTime);
+
+		currentTime += frameTime;
 	}
 }
 
@@ -25,12 +39,12 @@ void Game::initializeWindow(game_int _screenWidth, game_int _screenHeight, game_
 	sf::String game_title((std::string)_gameTitle);
 	sf::ContextSettings video_setting;
 
-	window.create(video_mode, game_title, sf::Style::Close | sf::Style::Titlebar, video_setting);
+	thisWindow.create(video_mode, game_title, sf::Style::Close | sf::Style::Titlebar, video_setting);
 }
 
 void Game::initializeGameData(/*input for GameData*/)
 {
-	gameDataRef = std::make_shared<GameData>(/*input for GameData*/);
+	thisGameDataRef = std::make_shared<GameData>(/*input for GameData*/);
 }
 
 }

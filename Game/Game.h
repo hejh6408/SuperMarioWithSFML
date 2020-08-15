@@ -13,8 +13,10 @@ namespace GAME
 {
 
 class GameData;
+class StateManager;
 
 typedef std::shared_ptr<GameData> GameDataRef;
+typedef std::shared_ptr<StateManager> StateManagerRef;
 
 class Game
 {
@@ -29,13 +31,16 @@ private:
 	void initializeWindow(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle);
 	void initializeGameData();
 	// 분당 프레임수
-	const float frame = 1.f / 60.f;
+	const float thisFrame = 1.f / 60.f;
 
 	// 게임 데이터 관리
-	GameDataRef gameDataRef;
+	GameDataRef thisGameDataRef;
 	
 	// Window 
-	sf::RenderWindow window;
+	sf::RenderWindow thisWindow;
+
+	// StateManager 게임의 상태를 관리한다.
+	StateManagerRef thisStateManagerRef;
 };
 
 }
