@@ -30,11 +30,11 @@ public:
 	long double GetElapsedTimeAsMilliSecond() const;
 	long double GetElapsedTimeAsSecond() const;
 
-	StateBaseRef GetCurrentState() const;
-
+	StateManagerRef GetStateManager() const;
 private:
 
 	void initialize();
+	void initializeStateManager();
 
 	sf::Clock clock;
 

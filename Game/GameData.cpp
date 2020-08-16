@@ -6,7 +6,9 @@ namespace GAME
 {
 
 GameData::GameData()
+	: thisStateManagerRef(nullptr)
 {
+	initialize();
 }
 
 long double GameData::GetElapsedTimeAsMilliSecond() const
@@ -19,14 +21,20 @@ long double GameData::GetElapsedTimeAsSecond() const
 	return clock.getElapsedTime().asSeconds();
 }
 
-StateBaseRef GameData::GetCurrentState() const
+StateManagerRef GameData::GetStateManager() const
 {
-	return thisStateManagerRef->GetCurrentState();
+	return thisStateManagerRef;
 }
 
 void GameData::initialize()
 {
 	// todo
+	initializeStateManager();
+}
+
+void GameData::initializeStateManager()
+{
+	thisStateManagerRef = std::make_shared<StateManager>();
 }
 
 }
