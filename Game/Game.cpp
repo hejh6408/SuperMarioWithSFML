@@ -2,6 +2,7 @@
 #include "GameData.h"
 
 #include "../Manager/StateManager.h"
+#include "../State/StateBase.h"
 
 namespace GAME
 {
@@ -15,10 +16,10 @@ Game::Game(game_int _screenWidth, game_int _screenHeight, game_string _gameTitle
 
 void Game::Run()
 {
-	static const long double maxFrameTime = 0.25;
-	static const long double dt = 1.0L / 60.0L;
+	static const long double maxFrameTime = 1.0L;
+	static const long double dt = maxFrameTime / 60.0L;
 
-	long double currentTime, iterpolation, frameTime, accumulator;
+	long double currentTime, interpolation, frameTime, accumulator;
 
 	currentTime = thisGameDataRef->GetElapsedTimeAsSecond();
 	accumulator = 0.0L;
@@ -30,6 +31,18 @@ void Game::Run()
 		frameTime = std::min(thisGameDataRef->GetElapsedTimeAsSecond() - currentTime, maxFrameTime);
 
 		currentTime += frameTime;
+		accumulator += frameTime;
+
+		StateBaseRef currentStateRef = thisGameDataRef->GetCurrentState();
+		for(; accumulator >= dt; accumulator -= dt)
+		{
+			currentStateRef->HandleInput();
+			currentStateRef->Update();
+		}
+
+		interpolation = accumulator / dt;
+
+		currentStateRef->Draw();
 	}
 }
 
