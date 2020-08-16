@@ -7,6 +7,7 @@ namespace GAME
 
 StateManager::StateManager()
 {
+	Initialize();
 }
 
 StateManager::~StateManager()
