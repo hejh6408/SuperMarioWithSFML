@@ -13,6 +13,11 @@ StateManager::~StateManager()
 {
 }
 
+void StateManager::Initialize()
+{
+	thisOperation = Operation::NONE | Operation::ADD;
+}
+
 void StateManager::PushBackState(StateBaseRef _state)
 {
 	thisStateList.push_back(_state);
@@ -38,7 +43,7 @@ StateBaseRef StateManager::GetFrontState() const
 	return thisStateList.empty() ? nullptr : thisStateList.front();
 }
 
-StateBaseRef StateManager::GetCurState() const
+StateBaseRef StateManager::GetCurrentState() const
 {
 	return GetBackState();
 }
@@ -48,7 +53,7 @@ void StateManager::SetOperation(StateManager::Operation _op)
 	thisOperation = _op;
 }
 
-StateManager::Operation StateManager::GetOperation(StateManager::Operation _op) const
+unsigned long long StateManager::GetOperation(StateManager::Operation _op) const
 {
 	return thisOperation;
 }
@@ -57,9 +62,12 @@ void StateManager::Update()
 {
 	for(size_t OpCheck = 0; OpCheck < StateManager::END; ++OpCheck)
 	{
-		if((thisOperation & (1 << OpCheck)) == 0) continue;
+		unsigned long long op = (unsigned long long)1 << OpCheck;
+		unsigned long long bitSet = thisOperation & op;
 
-		switch (1 << OpCheck)
+		if(bitSet == 0) continue;
+
+		switch (op)
 		{
 		case StateManager::RUN:
 			run();
