@@ -1,6 +1,6 @@
 #include "StateSplash.h"
 
-namespace Game
+namespace GAME
 {
 
 StateSplash::StateSplash(GameDataRef _gameDataRef)

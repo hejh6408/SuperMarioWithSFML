@@ -2,7 +2,7 @@
 
 #include "StateBase.h"
 
-namespace Game
+namespace GAME
 {
 
 class StateSplash : public StateBase

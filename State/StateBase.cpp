@@ -1,10 +1,12 @@
 #include "StateBase.h"
 
-namespace Game
+namespace GAME
 {
+
 StateBase::StateBase(GameDataRef _gameDataRef)
 	:gameDataWeakRef(_gameDataRef)
 {
 
 }
+
 }
