@@ -13,10 +13,8 @@ namespace GAME
 {
 
 class GameData;
-class StateManager;
 
 typedef std::shared_ptr<GameData> GameDataRef;
-typedef std::shared_ptr<StateManager> StateManagerRef;
 
 class Game
 {
@@ -38,9 +36,6 @@ private:
 	
 	// Window 
 	sf::RenderWindow thisWindow;
-
-	// StateManager 게임의 상태를 관리한다.
-	StateManagerRef thisStateManagerRef;
 };
 
 }

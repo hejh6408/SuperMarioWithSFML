@@ -24,16 +24,18 @@ void Game::Run()
 	currentTime = thisGameDataRef->GetElapsedTimeAsSecond();
 	accumulator = 0.0L;
 
+	StateManagerRef stateManagerRef = thisGameDataRef->GetStateManager();
+
 	while(thisWindow.isOpen() == true)
 	{
-		thisStateManagerRef->Update();
+		stateManagerRef->Update();
 
 		frameTime = std::min(thisGameDataRef->GetElapsedTimeAsSecond() - currentTime, maxFrameTime);
 
 		currentTime += frameTime;
 		accumulator += frameTime;
 
-		StateBaseRef currentStateRef = thisGameDataRef->GetCurrentState();
+		StateBaseRef currentStateRef = stateManagerRef->GetCurrentState();
 		for(; accumulator >= dt; accumulator -= dt)
 		{
 			currentStateRef->HandleInput();
