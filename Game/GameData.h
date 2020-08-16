@@ -9,13 +9,17 @@
 namespace GAME
 {
 
-class StateMachine;
+class StateManager;
 class AssetManager;
 class InputManager;
 
-typedef std::shared_ptr<StateMachine> StateMachineRef;
+class StateBase;
+
+typedef std::shared_ptr<StateManager> StateManagerRef;
 typedef std::shared_ptr<AssetManager> AssetManagerRef;
 typedef std::shared_ptr<InputManager> InputManagerRef;
+
+typedef std::shared_ptr<StateBase> StateBaseRef;
 
 class GameData
 {
@@ -25,15 +29,16 @@ public:
 
 	long double GetElapsedTimeAsMilliSecond() const;
 	long double GetElapsedTimeAsSecond() const;
+
 private:
 
 	void initialize();
 
 	sf::Clock clock;
 
-	StateMachineRef stateMachineRef;
-	AssetManagerRef assetManagerRef;
-	InputManagerRef inputManagerRef;
+	StateManagerRef thisStateManagerRef;
+	AssetManagerRef thisAssetManagerRef;
+	InputManagerRef thisInputManagerRef;
 };
 
 }
