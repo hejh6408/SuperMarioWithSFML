@@ -30,6 +30,8 @@ public:
 	long double GetElapsedTimeAsMilliSecond() const;
 	long double GetElapsedTimeAsSecond() const;
 
+	StateBaseRef GetCurrentState() const;
+
 private:
 
 	void initialize();
